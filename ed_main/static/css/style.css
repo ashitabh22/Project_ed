@@ -1,0 +1,91 @@
+/*
+.scroller {
+    overflow-y: scroll;
+}
+*/
+
+#scrollIt {
+    overflow-y: scroll;
+    height: 37rem;
+}
+
+
+.difficulty {
+    max-width: 10rem;
+}
+
+.padd {
+    height: 35rem;
+}
+
+@media all and (max-width: 992px) {
+    .invisib {
+        display: none;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.buttonBorder{
+    border: 1px solid #bf1c4a;
+    margin-right: 2px;
+}
+
+.buttonWidth{
+    min-width: 7rem;
+    text-align: justify;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    display: inline-block
+}
+
+#pytab {
+    margin-bottom: 4px
+}
+
+#editor {
+    min-height: 200px;
+    max-height: 400px;
+}
+
+.difficulty{
+    max-width: 7rem;
+}
+
+
+
+
+
+/*
+#wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+
+#side-nav {
+  position: fixed;
+  width: 250px;
+  height:100vh;
+  overflow-y: scroll;
+  background-color: darksalmon;
+}
+
+#content-wrapper {
+  margin: 0 0 0 250px;
+  padding: 0 30px;
+  overflow-y: scroll;
+  background-color: brown;
+}*/
