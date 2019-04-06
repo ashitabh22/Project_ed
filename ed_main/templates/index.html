@@ -14,8 +14,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="ed_main/static/css/bootstrap.css">
-    <link rel="stylesheet" href="ed_main/static/css/style.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 
 
     <!-- MathJax Scripts -->
@@ -34,11 +34,15 @@
     <!--    font awesome link-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    
+<!--jgkbsjdhgsdg-->
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<!--kjdfgiushz-->
 
 
-
-
-    <title>Hello, world!</title>
+    <title>Project Ed</title>
 </head>
 
 <body>
@@ -75,477 +79,153 @@
 
 
 
+    <div class="container-fluid px-0 mt-4">
 
-
-    <!-------------------------- filtering --------------------------->
-    <div class="container-fluid px-0 mt-2">
-        <div class="row mx-0">
-
-            <div class="col-xl-3 col-lg-3
-               border rounded 
-               mx-2 p-3
-               invisib 
-               d-none d-lg-block
-               position-fixed" id="scrollIt">
-
-                <!-------------------- Classes Checkboxes ----------------------->
-                <div class="card" style="max-width: 30rem;">
-                    <div class="card-body">
-
-                        <p class="pd-5 h3 classFilter"><strong>Filter by classes:</strong></p>
-                        <br>
-
-                        <div class="d-flex justify-content-between">
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class4" id="class4" /> Class 4</label>
-                            <!--                            <br>-->
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class5" id="class5" /> Class 5</label>
-                            <!--                            <br>-->
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class6" id="class6" /> Class 6</label>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class7" id="class7" /> Class 7</label>
-                            <!--                            <br>-->
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class8" id="class8" /> Class 8</label>
-                            <!--                            <br>-->
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class9" id="class9" /> Class 9</label>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class10" id="class10" /> Class 10</label>
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class11" id="class11" /> Class 11</label>
-                            <label style="font-size:12px;">
-                                <input type="checkbox" name="class-filter" value="class12" id="class12" /> Class 12</label>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-------------------- Subject Checkboxes ----------------------->
-                <div class="card mt-3" style="max-width: 30rem">
-                    <div class="card-body">
-                        <p class="h3 subjectFilter"><strong>Filter by Subjects:</strong></p>
-                        <br>
-
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="maths" id="mathFilter" /> Mathematics</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="physics" id="physicsFilter" /> Physics</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="chemistry" id="chemistryFilter" /> Chemistry</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="biology" id="biologyFilter" /> Biology</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="computerScience" id="computerScienceFilter" /> Computer Science</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="subject-filter" value="hindi" id="hindiFilter" /> Hindi</label>
-                        <br>
-                    </div>
-                </div>
-
-                <!-------------------- Difficulty Checkboxes ----------------------->
-                <div class="card mt-3 md-3" style="max-width: 30rem;">
-                    <div class="card-body">
-                        <p class="h3 subjectFilter"><strong>Filter by Difficulty:</strong></p>
-                        <br>
-
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="difficulty-filter" value="easy" id="easyFilter" /> Easy</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="difficulty-filter" value="medium" id="mediumFilter" /> Medium</label>
-                        <br>
-                        <label style="font-size:12px;">
-                            <input type="checkbox" name="difficulty-filter" value="hard" id="hardFilter" /> Hard</label>
-                        <br>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-            <!-- center div -->
-
-
-
-            <div class="col-xl-8 col-lg-8 mb-5
+        <div class="mx-auto col-xl-8 col-lg-10 col-md-12 col-sm-12 mb-0
                  hideIt scroller addQuestionInThisClass 
-                 justify-content-center offset-md-3">
+                 justify-content-center">
 
-                <div class="card p-4 mb-5" style="width:auto;">
-			<form>
+            <div class="card p-4 mb-5" style="width:auto;">
 
+                <form>
 
-                        <!------------- Keyboard Begin --------------->
-                        <div id="main">
-                            <script>
-                                $(".key").click($(".key").click() + $('#res').text(function() {
-                    $('#editor').html())
-            })
+                    <div id="main">
+                        <script>
+                            $(".key").click($(".key").click() + $('#res').text(function() {
+                                    $('#editor').html())
+                            })
 
-        </script>
-
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <span class="btn-group">
-
-                                        <button class="mr-1 border rounded key btn btn-info" data-toggle="dropdown" onclick="if(document.execCommand('increaseFontSize', false, null) == false) {addHTML('big')}"><strong><big>A</big></strong> <i class="fas fa-arrow-up"></i></button>
-
-                                        <button class="mr-5 border rounded key btn btn-info" data-toggle="dropdown" onclick="if(document.execCommand('decreaseFontSize', false, null) == false) {addHTML('small')}"><strong><big>A</big> </strong><i class="fas fa-arrow-down"></i></button>
-
-                                        <button type="button" onClick="document.execCommand('bold', false, null)" title="Bold (CTRL+B)" class="mr-1 border rounded key btn btn-secondary"><i class="fas fa-bold"></i></button>
-
-                                        <button type="button" onClick="document.execCommand('italic', false, null)" title="Italic (CTRL+I)" class="mr-1 border rounded key btn btn-secondary"><i class="fas fa-italic"></i></button>
-
-                                        <button type="button" onClick="document.execCommand('underline', false, null)" title="Underline (CTRL+I)" class="mr-5 border rounded key btn btn-secondary"><i class="fas fa-underline"></i></button>
-
-                                        <button class="mr-1 border rounded key btn btn-success" onclick="image()"><i class="fas fa-image"></i></button>
-
-                                        <a class="border rounded key btn btn-right btn-danger" onClick="document.getElementById('editor').innerHTML='<br>'"><big><i class="fas fa-times"></i></big></a>
+                        </script>
 
 
-                                    </span>
+                        <div class="panel panel-default">
 
+                            <span class="mb-2 btn-group">
+
+                                <div class="mr-2 btn-group">
+                                    <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeClass">CLASS</span></button>
+                                    <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <!-- <div class="dropdown-menu"> -->
+					{{ form.grades() }} 
+                                        <!-- <option class="dropdown-item classSelection" value="class4" id="4">CLASS 4</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class5" id="5">CLASS 5</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class6" id="6">CLASS 6</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class7" id="7">CLASS 7</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class8" id="8">CLASS 8</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class9" id="9">CLASS 9</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class10" id="10">CLASS 10</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class11" id="11">CLASS 11</option> -->
+                                        <!-- <option class="dropdown-item classSelection" value="class12" id="12">CLASS 12</option> -->
+                                    <!-- </div> -->
+                                </div>
+
+                                <div class="mr-2 btn-group">
+                                    <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeSubject">SUBJECT</span></button>
+                                    <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+				    {{ form.subject() }}
+                                    <!-- <div class="dropdown-menu"> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="chemistry">Chemistry</option> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="physics">Physics</option> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="maths">Mathematics</option> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="hindi">Hindi</option> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="computerScience">Computer Science</option> -->
+                                    <!--     <option class="dropdown-item subjectSelection" value="biology">Biology</option> -->
+                                    <!-- </div> -->
                                 </div>
 
 
-                                <span class="mt-2 btn-group">
+                                <div class="btn-group mr-2">
+                                    <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeDifficulty">DIFFICULTY</span></button>
+                                    <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+				    {{ form.difficulty() }}
+                                    <!-- <div class="dropdown-menu"> -->
+                                    <!--     <option class="dropdown-item difficultySelection" value="easy">Easy</option> -->
+                                    <!--     <option class="dropdown-item difficultySelection" value="medium">Medium</option> -->
+                                    <!--     <option class="dropdown-item difficultySelection" value="hard">Hard</option> -->
+                                    <!-- </div> -->
+                                </div>
 
-                                    <div class="mr-2 btn-group">
-					<button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeClass">{{ form.classes.label()}}</span></button>
-                                        <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-					    <option class="dropdown-item classSelection" value="new_value" id="4">{{ form.classes()}}</option>
-                                            <!-- <option class="dropdown-item classSelection" value="class4" id="4">CLASS 4</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class5" id="5">CLASS 5</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class6" id="6">CLASS 6</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class7" id="7">CLASS 7</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class8" id="8">CLASS 8</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class9" id="9">CLASS 9</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class10" id="10">CLASS 10</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class11" id="11">CLASS 11</option> -->
-                                            <!-- <option class="dropdown-item classSelection" value="class12" id="12">CLASS 12</option> -->
-                                        </div>
+                                <div class="btn-group mr-2">
+                                    <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeChapter">CHAPTER</span></button>
+                                    <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <option class="dropdown-item chapterSelection" value=""></option>
                                     </div>
+                                </div>
 
-                                    <div class="mr-2 btn-group">
-                                        <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeSubject">SUBJECT</span></button>
-                                        <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    <span class="sr-only">Dropdown Toggle</span>
-                                        </button>
-					<form method ="post">
-					    <!-- <div class = "dropdown-menu"> --> 
-					    {{ form.subject(class = "custom-select  subjectSelection")}}
-					    <!-- </div> -->
-                                        <!-- <div class="dropdown-menu"> -->
-					    <!-- <1!-- {% for sub in subjects %} --1> --> 
-					    <!-- <option class="dropdown-item subjectSelection" value={{ sub|string }}>{{ form.subjects }}</option> -->
-					    <!-- <1!-- {%endfor%} --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="chemistry">Chemistry</option> --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="physics">Physics</option> --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="maths">Mathematics</option> --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="hindi">Hindi</option> --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="computerScience">Computer Science</option> --1> -->
-                                        <!--     <1!-- <option class="dropdown-item subjectSelection" value="biology">Biology</option> --1> -->
-                                        <!-- </div> -->
-					</form>
-    <script> 
-	let subject_select = document.getElementByID('subject'); 
-
-    </script> 
+                                <div class="btn-group">
+                                    <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeSubtopic">SUB-TOPIC</span></button>
+                                    <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <option class="dropdown-item subTopicSelection" value=""></option>
                                     </div>
+                                </div>
 
-
-                                    <div class="btn-group">
-                                        <button type="button" class="btn buttonWidth buttonBorder btn-light rounded"><span id="changeDifficulty">DIFFICULTY</span></button>
-                                        <button type="button" class="btn buttonBorder btn-light dropdown-toggle dropdown-toggle-split rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <option class="dropdown-item difficultySelection" value="easy">Easy</option>
-                                            <option class="dropdown-item difficultySelection" value="medium">Medium</option>
-                                            <option class="dropdown-item difficultySelection" value="hard">Hard</option>
-                                        </div>
-                                    </div>
+                            </span>
 
 
 
+
+                            <div class="d-inline-flex flex-column flex-sm-row justify-content-between panel-heading">
+
+                                <span class="btn-group mb-1">
+                                    <button class="mr-1 border rounded key btn btn-info" data-toggle="dropdown" onclick="if(document.execCommand('increaseFontSize', false, null) == false) {addHTML('big')}"><strong><big>A</big></strong> <i class="fas fa-arrow-up"></i></button>
+
+                                    <button class="mr-5 border rounded key btn btn-info" data-toggle="dropdown" onclick="if(document.execCommand('decreaseFontSize', false, null) == false) {addHTML('small')}"><strong><big>A</big> </strong><i class="fas fa-arrow-down"></i></button>
+                                    <!--
                                 </span>
 
+                                <span class="btn-group mb-1">
+-->
+                                    <button type="button" onClick="document.execCommand('bold', false, null)" title="Bold (CTRL+B)" class="mr-1 border rounded key btn btn-secondary"><i class="fas fa-bold"></i></button>
 
+                                    <button type="button" onClick="document.execCommand('italic', false, null)" title="Italic (CTRL+I)" class="mr-1 border rounded key btn btn-secondary"><i class="fas fa-italic"></i></button>
 
+                                    <button type="button" onClick="document.execCommand('underline', false, null)" title="Underline (CTRL+I)" class="mr-5 border rounded key btn btn-secondary"><i class="fas fa-underline"></i></button>
+                                </span>
 
+                                <span class="btn-group mb-1">
+                                    <button class="mr-1 border rounded key btn btn-success" onclick="image()"><i class="fas fa-image"></i></button>
 
-                                <div contenteditable="true" id="editor" class="mt-2 panel-body border" placeholder="Type question here..."></div>
+                                    <a class="border mr-5 rounded key btn btn-right btn-danger" onClick="document.getElementById('editor').innerHTML='<br>'"><big><i class="fas fa-times"></i></big></a>
+                                </span>
 
                             </div>
-<!--                                                            <div id="res"></div>-->
-                        </div>
 
-                        <div class="mt-2 form-group">
-                            <button type="button" class="btn create btn-dark">Add Question</button>
-                        </div>
-
-
-                        <!---------------- keyboard END ----------------->
-
-
-
-
-                        <!--
-                        <div class="form-group getClass">
-                            <label for="exampleInputEmail1">Enter Question</label>
-                            <textarea type="text" class="form-control boldQuestion questionInput" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter question here"></textarea>
-
-                            <small id="emailHelp" class="form-text text-muted">Put equation between two dollar signs, like this \$(equation here)\$</small>
-
-                            <input type="text" class="mt-4 option1 form-control  questionInput" aria-describedby="emailHelp" placeholder="Option 1">
-                            <input type="text" class="option2 form-control  questionInput" aria-describedby="emailHelp" placeholder="Option 2">
-                            <input type="text" class="option3 form-control  questionInput" aria-describedby="emailHelp" placeholder="Option 3">
-                            <input type="text" class="option4 form-control  questionInput" aria-describedby="emailHelp" placeholder="Option 4">
+                            <div contenteditable="true" id="editor" class="mt-0 panel-body border" placeholder="Type question here..."></div>
 
                         </div>
--->
-
-                        <!--
-                        <div class="form-group">
-                            <input type="number" class="difficulty" name="quantity" min="1" max="10">
-                            <button type="button" class="btn strong btn-info">BOLD</button>
-                            <button type="button" class="btn italic btn-info">ITALIC</button>
-                            <button type="button" class="btn underline btn-info">UNDERLINE</button>
-                            <button type="button" class="btn formula btn-info">FORMULA</button>
-                        </div>
--->
-
-
-
-                    </form>
-                </div>
-
-
-
-
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="chemistry" data-category="chemistry easy class11">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h2 class="card-title"><strong>Question</strong></h2>
-                            <span class="mt-1">
-                                <p class="mr-3"><strong>Class: </strong></p>
-                                <p class="mr-3"><strong>Subject: </strong></p>
-                                <p><strong>Difficulty: </strong></p>
-                            </span>
-                        </div>
-                        <p class="card-text questionField">What is the empirical formula of ethane $C_2H_6$?
-                           <br>
-                            (a) $CH$
-                            <br>
-                            (b) $CH_2$
-                            <br>
-                            (c) $CH_3$
-                            <br>
-                            (d) $N.O.T$
-                        </p>
-                        <br>
-                        <button type="button" class="d-flex mt-3 p-1 btn btn-success">ADD QUESTION</button>
+                        <!--                                                            <div id="res"></div>-->
                     </div>
-                </div>
+
+                    <div class="addOption">
+                        <button type="button" class="btn btn-outline-info addOptionButton my-2"><i class="fas fa-plus"></i></button>
+			<form method ="POST" action="" id ="answer_form" >
+				<input type="hidden" name= "csrf_token" value="{{ csrf_token() }}" >
+			</form>
+			</div>
 
 
-
-
-                <!--
-                <div class="card mb-3 questionList" style="width:auto" data-id="subjectSelectionValue" data-category="classSelectionValue difficultySelectionValue subjectSelectionValue">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h2 class="card-title"><strong>Question</strong></h2>
-                            <span class="mt-1">
-                                <p class="mr-3"><strong>Class: </strong>classSelectionText</p>
-                                <p class="mr-3"><strong>Subject: </strong>subjectSelectionText</p>
-                                <p><strong>Difficulty: </strong>difficultySelectionText</p>
-                            </span>
-                        </div>
-                        <p class="card-text questionField"> store </p>
-                        <br>
-                        <button type="button" class="d-flex mt-3 p-1 btn btn-success">ADD QUESTION</button>
+                    <div class="mt-2 form-group">
+                        <button type="button" class="btn create btn-dark">Add Question</button>
                     </div>
-                </div>
--->
 
+                    <!---------------- keyboard END ----------------->
 
-
-
-
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="biology" data-category="biology hard class12">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">BIOLOGY HARD CLASS12</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="hindi" data-category="hindi medium class10">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">HINDI MEDIUM CLASS10</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="maths" data-category="maths hard class6">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">MATHS HARD CLASS6</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="computerScience" data-category="computerScience easy class12">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">COMPUTER SCIENCE EASY CLASS12</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="physics" data-category="physics hard class8">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">PHYSICS HARD CLASS8</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="chemistry" data-category="chemistry easy class9">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">CHEMISTRY EASY CLASS9</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="maths" data-category="maths hard class4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">MATHS HARD CLASS4</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="hindi" data-category="hindi hard class10">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">HINDI HARD CLASS10</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3 questionList" style="width:auto" data-id="maths" data-category="maths medium class6">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Question</h3>
-                            <p>Difficulty: 6</p>
-                        </div>
-                        <p class="card-text questionField">MATHS MEDIUM CLASS6</p>
-                        <br>
-                        <p>Difficulty: 6</p>
-                    </div>
-                </div>
-
-
-
-
-                <!--
-                <div class="card mt-5" style="width: auto;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-
-                <div class="card mt-5" style="width: auto;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
--->
-
-                <!--
-                <div class="card mt-5" style="width: auto;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
--->
+                </form>
             </div>
-
-            <div class="col-xl-1 d-lg-none"></div>
         </div>
     </div>
-
-
-
-
 
 
 
@@ -559,7 +239,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 
-    <script src="ed_main/static/js/javascript.js"></script>
+    <script src="../static/js/javascript.js"></script>
 
 
 

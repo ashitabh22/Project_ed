@@ -1,8 +1,26 @@
+/*following commented lines are used in student interface*/
+
 /*
-.scroller {
-    overflow-y: scroll;
+.difficulty {
+    max-width: 10rem;
 }
 */
+
+/*
+.padd {
+    height: 35rem;
+}
+*/
+
+/*
+@media all and (max-width: 992px) {
+    .invisib {
+        display: none;
+    }
+}
+*/
+
+
 
 #scrollIt {
     overflow-y: scroll;
@@ -10,32 +28,18 @@
 }
 
 
-.difficulty {
-    max-width: 10rem;
-}
-
-.padd {
-    height: 35rem;
-}
-
-@media all and (max-width: 992px) {
-    .invisib {
-        display: none;
-    }
-}
-
 ul {
     list-style-type: none;
 }
 
-.buttonBorder{
+.buttonBorder {
     border: 1px solid #bf1c4a;
     margin-right: 2px;
 }
 
-.buttonWidth{
-    min-width: 7rem;
-    text-align: justify;
+.buttonWidth {
+    min-width: 5rem;
+    text-align: center;
 }
 
 
@@ -61,7 +65,7 @@ p {
     max-height: 400px;
 }
 
-.difficulty{
+.difficulty {
     max-width: 7rem;
 }
 
@@ -89,3 +93,26 @@ p {
   overflow-y: scroll;
   background-color: brown;
 }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------BLUR POP UP---------------*/
+
+
+
+
+

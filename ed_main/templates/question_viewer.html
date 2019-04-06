@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project_ed- Question Viewer</title>
+</head>
+<body>
+    <center> <h1>Question Viewer </h1> </center> 
+    <form method = "POST" action ="" >
+	<input type="hidden" name= "csrf_token" value="{{ csrf_token() }}" >
+	<center> <input type="search" name= "search_question" value="Search.." > </center>
+	<center> <input type="submit" name = "Submit"></center>
+    </form>
+    {% for question in questions %} 
+    <strong> Question ID:</strong><p> {{ question.question_text }}</p>
+    <strong> Difficulty ID:</strong><span> {{ question.difficulty_id }} </span><br>
+    <strong> Subject ID:</strong><span> {{ question.subject_id }} </span><br>
+    <strong> Grade ID:</strong><span> {{ question.grade_id }}</span><br>
+    <strong> Answer :</strong><span> {{ question.answers }} </span><br>
+    <strong> Tags :</strong><span> {{ question.istag }}</span><br><br>
+    {% endfor %}
+     
+</body>
+</html>
