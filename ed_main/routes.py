@@ -1,13 +1,8 @@
 from flask import Flask, render_template , request, redirect,url_for
 from ed_main import app , db
 from ed_main.forms import Question_form ,SearchForm
-from ed_main.models import Subject, Difficulty, Grade, Question 
-
-
-
-
-
-
+from ed_main.models import Subject, Difficulty, Grade, Question, Tags
+import flask_whooshalchemy
 
 
 
@@ -27,18 +22,35 @@ def home():
 
     return render_template('index.html', form = form) 
 
-@app.route('/view_search/<search>')
-def view_search(search): 
-    # print('I am here')
-    print(search)
-    return '<h1> hi </h1>'
+@app.route('/search_results')
+def view_search(): 
+    answer=[]
+    try: 
+        result = Question.query.whoosh_search(request.args.get('search_question')).all()
+        answer = answer + result
+    except: 
+        tag_results = Tags.query.whoosh_search(request.args.get('search_question')).all()
+        temp = [ Question.query.filter_by(id = x.question_id).first() for x in tag_results]
+        answer = answer + temp
+    # else: 
+    #     tag_results = Tags.query.whoosh_search(request.args.get('search_question')).all()
+    #     temp = [ Question.query.filter_by(id = x.question_id).first() for x in tag_results]
+        # answer = answer + temp
 
-@app.route('/question_viewer', methods = ['get', 'post'])
+
+    return render_template('question_viewer.html', questions = answer) 
+
+@app.route('/question_viewer', methods = ['get','post'])
 def question_viewer(): 
-    # form = SearchForm()
-    # print( form.validate_on_submit())
-    if request.method=="POST":
-        # print(request.form['search_question'])
-        return redirect(url_for('view_search',search = request.form['search_question']))
-    return render_template('question_viewer.html',questions =Question.query.all()) 
+    # if request.method=="POST":
+    #     # print(request.form['search_question'])
+    #     # results = Question.query.whoosh_search(request.form['search_question']).all()
+    #     return redirect(url_for('view_search', query = request.form['search_question']))
+    #     # return redirect(url_for('view_search',search = request.form['search_question']))
+    questions = Question.query.all()
+    return render_template('question_viewer.html', questions = questions) 
     
+@app.errorhandler(500)
+def database_error(error): 
+    db.session.rollback()
+    return redirect(url_for('question_viewer'))

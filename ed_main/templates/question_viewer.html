@@ -6,7 +6,7 @@
 </head>
 <body>
     <center> <h1>Question Viewer </h1> </center> 
-    <form method = "POST" action ="" >
+    <form method = "GET" action ="search_results" >
 	<input type="hidden" name= "csrf_token" value="{{ csrf_token() }}" >
 	<center> <input type="search" name= "search_question" value="Search.." > </center>
 	<center> <input type="submit" name = "Submit"></center>
@@ -17,7 +17,7 @@
     <strong> Subject ID:</strong><span> {{ question.subject_id }} </span><br>
     <strong> Grade ID:</strong><span> {{ question.grade_id }}</span><br>
     <strong> Answer :</strong><span> {{ question.answers }} </span><br>
-    <strong> Tags :</strong><span> {{ question.istag }}</span><br><br>
+    <strong> Tags :</strong><span> {{ question.tag }}</span><br><br>
     {% endfor %}
      
 </body>

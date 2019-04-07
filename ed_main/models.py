@@ -1,5 +1,13 @@
-from ed_main import db
+from ed_main import db,app
 from datetime import datetime
+from whoosh.analysis import StemmingAnalyzer
+import flask_whooshalchemy as whooshalchemy
+import sys
+# if sys.version_info >= (3, 0):
+#     enable_search = False
+# else:
+#     enable_search = True
+#     import flask_whooshalchemy as whooshalchemy
 
 class Subject(db.Model): 
     id = db.Column(db.Integer, primary_key=True) 
@@ -25,6 +33,7 @@ class Grade(db.Model):
 
 
 class Question(db.Model): 
+    __searchable__ = ['question_text']
     id = db.Column(db.Integer, primary_key = True)
     question_text = db.Column(db.String(10000),nullable=False)
     difficulty_id = db.Column(db.Integer,db.ForeignKey('difficulty.id'))
@@ -32,17 +41,22 @@ class Question(db.Model):
     grade_id = db.Column(db.String(10),db.ForeignKey('grade.id'))
     answers = db.Column(db.JSON)
 
-    istag = db.relationship('Tags', backref = 'question_tags') 
+    tag = db.relationship('Tags',uselist =False, backref = 'question') 
     def __repr__(self): 
          return f"({self.id}, {self.question_text}, {self.grade_id}, {self.subject_id}, {self.difficulty_id})" 
 
 
 class Tags(db.Model): 
+    __searchable__ =['tags']
     id = db.Column(db.Integer, primary_key = True) 
-    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), unique=True) 
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id')) 
     tags = db.Column(db.String(500)) 
-
+    # tag_id = db.Column(db.Integer, db.ForeignKey('question.id')
     def __repr__(self) : 
         return f"{self.id} | {self.question_id} | {self.tags}"
 
+# if enable_search: 
+# print("SOMETHINGGGGG")
+whooshalchemy.whoosh_index(app,Question) 
+whooshalchemy.whoosh_index(app,Tags) 
 
