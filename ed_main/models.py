@@ -15,7 +15,7 @@ class Subject(db.Model):
     questions = db.relationship('Question',backref= 'subject') 
 
     def __repr__(self): 
-         return f"({self.id},{self.name})" 
+         return f"{self.id},{self.name}" 
 
 class Difficulty(db.Model): 
     id = db.Column(db.Integer, primary_key = True) 

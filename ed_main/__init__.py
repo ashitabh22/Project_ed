@@ -21,6 +21,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from whoosh.analysis import StemmingAnalyzer 
 import flask_whooshalchemy
+from flask_admin import Admin
 
 app = Flask(__name__) 
 csrf=CSRFProtect(app)
@@ -29,10 +30,15 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONAS'] = True 
 app.config['WHOOSH_BASE'] = 'whoosh'
 app.config['WHOOSH_ANALYZER'] = StemmingAnalyzer()
+app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
+
+
 
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+admin = Admin(app, name= 'Project Ed', template_mode='bootstrap3')
 
 from ed_main import routes
+from ed_main import admin_views 
 
